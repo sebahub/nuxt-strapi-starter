@@ -6,16 +6,15 @@
 
 ## Then, add @nuxtjs/strapi to the modules section of nuxt.config.js:
 
-
-`  export default {
-    modules: ['@nuxtjs/strapi'],
-    strapi: {
-      url: 'http://localhost:1337',
-      entities: ['posts']
-    }
-  }`
-
-
+```javascript
+export default {
+  modules: ['@nuxtjs/strapi'],
+  strapi: {
+    url: 'http://localhost:1337',
+    entities: ['posts']
+  }
+}
+```
 
 ## Create Strapi Project (version 3.10 ee) NPM
 
@@ -23,8 +22,8 @@
 
 ## Add to /frontend/index.vue
 
-
-`  <script>
+```vue  
+<script>
   export default {
     data() {
       return {
@@ -35,15 +34,15 @@
       this.posts = await this.$strapi.$posts.find();
     },
   };
-  </script>`
+</script>  
+```
 
-`
-  <template>
-    <div id="app">
-      <div v-for="post in posts" :key="post.id">
-        {{ post.message }}
-      </div>
+```vue
+<template>
+  <div id="app">
+    <div v-for="post in posts" :key="post.id">
+      {{ post.message }}
     </div>
-  </template>
-
-`
+  </div>
+</template>
+```
