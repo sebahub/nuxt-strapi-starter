@@ -1,19 +1,19 @@
 ## Create Nuxt Project
-yarn create nuxt-app <project-name>
+`yarn create nuxt-app <project-name>`
 
 ## Add Strapi Module
-- `yarn add @nuxtjs/strapi@^0.3.1`
+`yarn add @nuxtjs/strapi@^0.3.1`
 
 ## Then, add @nuxtjs/strapi to the modules section of nuxt.config.js:
 
 
-  export default {
+`  export default {
     modules: ['@nuxtjs/strapi'],
     strapi: {
       url: 'http://localhost:1337',
       entities: ['posts']
     }
-  }
+  }`
 
 
 
@@ -24,7 +24,7 @@ yarn create nuxt-app <project-name>
 ## Add to /frontend/index.vue
 
 
-  <script>
+`  <script>
   export default {
     data() {
       return {
@@ -35,9 +35,9 @@ yarn create nuxt-app <project-name>
       this.posts = await this.$strapi.$posts.find();
     },
   };
-  </script>
+  </script>`
 
-
+`
   <template>
     <div id="app">
       <div v-for="post in posts" :key="post.id">
@@ -46,3 +46,4 @@ yarn create nuxt-app <project-name>
     </div>
   </template>
 
+`
